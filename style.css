@@ -1,0 +1,26 @@
+.area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+.caluladora{
+    display: flex;
+    margin: 10px;
+}
+.escolha{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 10px;
+}
+.cl{
+    width: 40px;
+    height: 10px;
+    padding: 5px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+button{
+    width: 100px;
+    height: 50px;
+}
