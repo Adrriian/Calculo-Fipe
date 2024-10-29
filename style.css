@@ -1,26 +1,109 @@
-.area{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222E5A;
+}
+label,
+h1{
+    font-size: 15px;
+    font-weight: bold;
+}
+button{
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #222E5A;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+}
+
+.fundo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteiner{
+    width: 1000px;
+    display:inline-block;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+.conteiner_conteudo{
+    max-width: 70vw;
+    margin: auto;
+    text-align: center;
+}
+.calculo_fipe{
     display: flex;
     flex-direction: row;
     align-items: center;
-   
+    justify-content: center;
 }
-.caluladora{
+.valores{
     display: flex;
-    margin: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin:30px;
 }
-.escolha{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 10px;
-}
-.cl{
-    width: 40px;
-    height: 10px;
+.valores input{
     padding: 5px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    width: 200px;
 }
-button{
-    width: 100px;
-    height: 50px;
+.coeficiente{
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+  
+}
+.coeficiente_mensalidade{
+    margin: 0 10px 0 10px;
+}
+.coeficiente_franquia{
+    display: flex;
+    flex-direction:column;
+    margin: 0 10px 0 10px;
+}
+.mensalidade_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.mensalidade{
+    margin: 10px;
+}
+.franquia{
+    margin: 10px;
+}
+.dados_veiculo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.dados_veiculo_text{
+    text-align: center;
+    margin-top: 10px ;
+}
+.dados_veiculo_resultado{
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.mfr{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.wmfr{
+    display: inline-block;
+    width: 250px;
 }

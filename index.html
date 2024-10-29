@@ -4,36 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>COTAÇÃO MANUAL</title>
 </head>
 <body>
-    <div class="area">
-    <div class="caluladora">
-        <label>Fipe</label>
-        <input type="text" class="fipe cl"  >
-        <div class="escolha">
-            <label>60</label>
-            <input type="radio" name = "coeficiente_mensalidade" class="calculo1 cl" value="0.006" >
-            <label>30</label>
-            <input type="radio" name = "coeficiente_mensalidade" class="calculo2 cl" value="0.003" >
-            <label>10</label>
-            <input type="radio" name = "coeficiente_franquia" class="calculo3 cl" value="0.1">
-            <label>5</label>
-            <input type="radio" name = "coeficiente_franquia" class="calculo4 cl" value="0.05">
-        </div>
-
-        <div class="resultado_mensalidade1">
-            <label>mensalidade</label>
-            <input type="text" class="resultado_mensalidade cl">
-        </div>
-
-        <div class="resultado_franquia1">
-            <label>Franquia</label>
-            <input type="text" class="resultado_franquia cl">
-        </div>
-    </div>
-    </div>
-    <button class="botao">Resultado</button>
+    <main class="fundo">
+        <section>
+            <div class="conteiner">
+                <div class="conteiner_conteudo">
+                    <div class="calculo_fipe">
+                        <div class="valores">
+                            <label>Fipe</label>
+                            <input type="text" class="fipe">
+                        </div>
+                        <div class="coeficiente">
+                            <div class="coeficiente_mensalidade">
+                                <div class="mensalidade_text">
+                                    <h1>Coeficiente mensalidade</h1>
+                                </div>
+                                <div class="mensalidade_container">
+                                    <div class="mensalidade">
+                                        <label>60</label>
+                                        <input type="radio" name="men" value="0.006">
+                                    </div>
+                                    <div class="mensalidade">
+                                        <label>50</label>
+                                        <input type="radio" name="men" value="0.005">
+                                    </div>
+                                    <div class="mensalidade">
+                                        <label>30</label>
+                                        <input type="radio" name="men" value="0.003">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="coeficiente_franquia">
+                                <div class="franquia_text">
+                                    <h1>coeficiente de franquia</h1>
+                                </div>
+                                <div class="franquia_conteiner">
+                                    <div class="franquia">
+                                        <label>10%</label>
+                                        <input type="radio" name="fra" value="0.1">
+                                    </div>
+                                    <div class="franquia">
+                                        <label>5%</label>
+                                        <input type="radio" name="fra" value="0.05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn">resultado</button>
+                    </div>
+                </div>        
+            </div>
+        </section>
+        <section class="cotacao">
+            <div class="conteiner">
+                <div class="conteiner_conteudo">
+                    <div class="dados_veiculo">
+                        <div class="dados_veiculo_text">
+                            <h1>Dados veiculo</h1>
+                        </div>
+                        <div class="dados_veiculo_resultado">
+                            <DIV class="fipe_veiculo mfr ">
+                                <label>Fipe</label>
+                                <input type= 'text' class="fipe_resultado wmfr">
+                            </DIV>
+                            <DIV class="mensalidade_veiculo mfr">
+                                <label>Mensalidade</label>
+                                <input type= 'text' class="mensalidade_resultado wmfr">
+                            </DIV>
+                            <DIV class="franquia_veiculo mfr">
+                                <label>Franquia</label>
+                                <input type= 'text' class="franquia_resultado wmfr">
+                            </DIV>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

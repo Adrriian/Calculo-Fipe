@@ -1,16 +1,53 @@
-function result(){
-    let fipe = document.querySelector('.fipe').value;
-    let calculo = document.querySelector('.calculo1').value;
-    let calculo2 = document.querySelector('.calculo3').value;
-    let resulta = Number(fipe) * Number(calculo);
-    let resulta2 = Number(fipe) * Number(calculo2);
+let btn = document.querySelector('.btn');
+btn.addEventListener('click', clicou);
 
-    document.querySelector('.resultado_mensalidade').value = resulta;
-    document.querySelector('.resultado_franquia').value = resulta2;
+function clicou(){
+    const fipe = document.querySelector('.fipe').value;
+    const radio_men = document.querySelectorAll('input[name="men"]');
+    const radio_fra = document.querySelectorAll('input[name="fra"]');
+    let multiplicadormen = 0;
+    let multiplicadormenV = false;
+
+    if(fipe == ""){
+        alert('Ensira um valor de Fipe')
+    }
+
+    for (let i = 0; i < radio_men.length; i++) {
+        if(radio_men[i].checked){
+            multiplicadormen = parseFloat(radio_men[i].value);
+            multiplicadormenV = true;
+            break;
+        }
+    }
+
+    if(multiplicadormenV == false){
+        alert('Selecione uma opção para mensalidade');
+        return;
+    }
+
+    let multiplicadorfra = 0;
+    let multiplicadorfraV = false;
+
+    for (let i = 0; i < radio_fra.length; i++) {
+        if(radio_fra[i].checked){
+            multiplicadorfra = parseFloat(radio_fra[i].value);
+            multiplicadorfraV = true;
+            break;
+        }
+    }
+
+    if(multiplicadorfraV == false){
+        alert('Selecione uma opção para franquia');
+        return;
+    }
+
+    document.querySelector('.fipe_resultado').value = fipe;
+    
+    const calculomen = fipe * multiplicadormen;
+    document.querySelector('.mensalidade_resultado').value = calculomen;
+
+    const calculofra = fipe * multiplicadorfra;
+    document.querySelector('.franquia_resultado').value = calculofra;
 }
 
 
-
-
-const button = document.querySelector('.botao');
-button.addEventListener('click', result);
