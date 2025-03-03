@@ -43,7 +43,7 @@ function clicou(){
 
     document.querySelector('.fipe_resultado').value = fipe;
     
-    const calculomen = fipe * multiplicadormen;
+    const calculomen = (fipe * multiplicadormen)+20;
     document.querySelector('.mensalidade_resultado').value = calculomen;
 
     const calculofra = fipe * multiplicadorfra;
