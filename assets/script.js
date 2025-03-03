@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função chamada ao clicar no botão
     function clicou() {
         let fipe = getRawValue(); // Obtém o valor numérico do input
+        let ctc = document.querySelector(".cotacao")
+        let dados = document.querySelector(".dados")
+        let benefits = document.querySelector(".benefits")
         const radio_men = document.querySelectorAll('input[name="men"]');
         const radio_fra = document.querySelectorAll('input[name="fra"]');
         const radio_vec = document.querySelectorAll('input[name="vec"]'); // Tipo de veículo
@@ -100,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".fipe_resultado").value = formatCurrency(fipe);
         document.querySelector(".mensalidade_resultado").value = formatCurrency(calculomen);
         document.querySelector(".franquia_resultado").value = formatCurrency(calculofra);
+        
+        ctc.style.display = "flex"
+        benefits.style.display = "grid"
+        dados.style.display = "none"
     }
 
     // Função para formatar valores numéricos como moeda
