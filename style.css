@@ -21,6 +21,9 @@ button{
     border: 1px solid black;
     color: white;
 }
+.a:hover{
+    cursor: pointer;
+}
 
 .fundo{
     display: flex;
@@ -113,4 +116,41 @@ button{
     padding: 5px;
     width: 130px;
     text-align: center;
+}
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .btn,
+    .btn-pdf {
+        display: none; /* Oculta os botões durante a impressão */
+    }
+
+    .conteiner {
+        width: 100%;
+    }
+
+    .conteiner_conteudo {
+        text-align: left;
+        padding: 0;
+    }
+
+    .calculo_fipe,
+    .dados_veiculo {
+        display: block;
+    }
+
+    .dados_veiculo_resultado {
+        display: block;
+    }
+
+    .mfr {
+        margin-right: 0;
+    }
+
+    .wmfr {
+        width: auto;
+    }
 }

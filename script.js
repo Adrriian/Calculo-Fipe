@@ -108,22 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Função para gerar o PDF com o design da página
-    function gerarPDF() {
-        const options = {
-            margin:       1,
-            filename:     'cotacao.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
 
-        // Captura o conteúdo da seção com a classe .cotacao
-        const element = document.querySelector('.cotacao');
-
-        // Gera o PDF mantendo o design
-        html2pdf().from(element).set(options).save();
-    }
 
     btn.addEventListener("click", clicou);
-    btnPdf.addEventListener("click", gerarPDF);
 });
