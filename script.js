@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let fipe = getRawValue(); // Obtém o valor numérico do input
         const radio_men = document.querySelectorAll('input[name="men"]');
         const radio_fra = document.querySelectorAll('input[name="fra"]');
+        const radio_vec = document.querySelectorAll('input[name="vec"]'); // Tipo de veículo
 
         let multiplicadormen = 0;
         let multiplicadormenV = false;
@@ -62,13 +63,41 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Calcula e exibe os resultados
-        document.querySelector(".fipe_resultado").value = formatCurrency(fipe);
+        let tipoVeiculo = "";
+        let tipoVeiculoV = false;
 
-        const calculomen = fipe * multiplicadormen + 20;
-        document.querySelector(".mensalidade_resultado").value = formatCurrency(calculomen);
+        for (let i = 0; i < radio_vec.length; i++) {
+            if (radio_vec[i].checked) {
+                tipoVeiculo = radio_vec[i].value; // 'carro' ou 'moto'
+                tipoVeiculoV = true;
+                break;
+            }
+        }
 
+        if (!tipoVeiculoV) {
+            alert("Selecione um tipo de veículo");
+            return;
+        }
+
+        // Definir valores mínimos de mensalidade
+        const minMensalidadeCarro = 91.50;
+        const minMensalidadeMoto = 86.50;
+
+        // Cálculo da mensalidade considerando o mínimo
+        let calculomen = fipe * multiplicadormen;
+        if (tipoVeiculo === "carro" && calculomen < minMensalidadeCarro) {
+            calculomen = minMensalidadeCarro;
+        } else if (tipoVeiculo === "moto" && calculomen < minMensalidadeMoto) {
+            calculomen = minMensalidadeMoto;
+        }
+        calculomen += 20; // Soma os R$ 20 fixos
+
+        // Cálculo da franquia
         const calculofra = fipe * multiplicadorfra;
+
+        // Exibir resultados formatados
+        document.querySelector(".fipe_resultado").value = formatCurrency(fipe);
+        document.querySelector(".mensalidade_resultado").value = formatCurrency(calculomen);
         document.querySelector(".franquia_resultado").value = formatCurrency(calculofra);
     }
 

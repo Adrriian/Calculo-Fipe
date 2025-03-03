@@ -64,7 +64,8 @@ button{
     margin: 30px;
   
 }
-.coeficiente_mensalidade{
+.coeficiente_mensalidade,
+.vec_type{
     margin: 0 10px 0 10px;
 }
 .coeficiente_franquia{
@@ -72,11 +73,14 @@ button{
     flex-direction:column;
     margin: 0 10px 0 10px;
 }
-.mensalidade_container{
+.mensalidade_container,
+.vec_container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.mensalidade{
+.mensalidade,
+.veiculo{
+    text-align: center;
     margin: 10px;
 }
 .franquia{
