@@ -107,21 +107,21 @@ document.addEventListener("DOMContentLoaded", function () {
         return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value);
     }
 
-    // Função para gerar o PDF
+    // Função para gerar o PDF com o design da página
     function gerarPDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
+        const options = {
+            margin:       1,
+            filename:     'cotacao.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
 
-        const fipe = document.querySelector(".fipe_resultado").value;
-        const mensalidade = document.querySelector(".mensalidade_resultado").value;
-        const franquia = document.querySelector(".franquia_resultado").value;
+        // Captura o conteúdo da seção com a classe .cotacao
+        const element = document.querySelector('.cotacao');
 
-        doc.text("COTAÇÃO DE SEGURO", 10, 10);
-        doc.text(`Fipe: ${fipe}`, 10, 20);
-        doc.text(`Mensalidade: ${mensalidade}`, 10, 30);
-        doc.text(`Franquia: ${franquia}`, 10, 40);
-
-        doc.save("cotacao.pdf");
+        // Gera o PDF mantendo o design
+        html2pdf().from(element).set(options).save();
     }
 
     btn.addEventListener("click", clicou);
