@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const priceInput = document.querySelector(".fipe");
     const btn = document.querySelector(".btn");
+    const btnPdf = document.querySelector(".btn-pdf");
 
     // Formata o input enquanto o usuário digita
     priceInput.addEventListener("input", function () {
@@ -106,5 +107,23 @@ document.addEventListener("DOMContentLoaded", function () {
         return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value);
     }
 
+    // Função para gerar o PDF
+    function gerarPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        const fipe = document.querySelector(".fipe_resultado").value;
+        const mensalidade = document.querySelector(".mensalidade_resultado").value;
+        const franquia = document.querySelector(".franquia_resultado").value;
+
+        doc.text("COTAÇÃO DE SEGURO", 10, 10);
+        doc.text(`Fipe: ${fipe}`, 10, 20);
+        doc.text(`Mensalidade: ${mensalidade}`, 10, 30);
+        doc.text(`Franquia: ${franquia}`, 10, 40);
+
+        doc.save("cotacao.pdf");
+    }
+
     btn.addEventListener("click", clicou);
+    btnPdf.addEventListener("click", gerarPDF);
 });

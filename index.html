@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>COTAÇÃO MANUAL</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <main class="fundo">
@@ -38,22 +39,18 @@
                                 </div>
                                 <div class="mensalidade_container">
                                     <div class="mensalidade">
-                                 
                                         <input type="radio" name="men" value="0.008" id="80">
                                         <label for="80">80</label>
                                     </div>
                                     <div class="mensalidade">
-                                       
                                         <input type="radio" name="men" value="0.006" id="60">
                                         <label for="60">60</label>
                                     </div>
                                     <div class="mensalidade">
-                                        
                                         <input type="radio" name="men" value="0.005" id="50">
                                         <label for="50">50</label>
                                     </div>
                                     <div class="mensalidade">
-                                    
                                         <input type="radio" name="men" value="0.005" id="40">
                                         <label for="40">40</label>
                                     </div>
@@ -65,11 +62,11 @@
                             </div>
                             <div class="coeficiente_franquia">
                                 <div class="franquia_text">
-                                    <h1>coeficiente de franquia</h1>
+                                    <h1>Coeficiente de franquia</h1>
                                 </div>
                                 <div class="franquia_conteiner">
                                     <div class="franquia">
-                                        <input type="radio" name="fra" value="0.1"id="10">
+                                        <input type="radio" name="fra" value="0.1" id="10">
                                         <label for="10">10%</label>
                                     </div>
                                     <div class="franquia">
@@ -83,7 +80,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn">resultado</button>
+                        <button class="btn">Resultado</button>
+                        <button class="btn-pdf">Gerar PDF</button>
                     </div>
                 </div>        
             </div>
@@ -96,18 +94,18 @@
                             <h1>Dados veiculo</h1>
                         </div>
                         <div class="dados_veiculo_resultado">
-                            <DIV class="fipe_veiculo mfr ">
+                            <div class="fipe_veiculo mfr">
                                 <label>Fipe</label>
-                                <input type= 'text' class="fipe_resultado wmfr" placeholder="R$ 0,00">
-                            </DIV>
-                            <DIV class="mensalidade_veiculo mfr">
+                                <input type="text" class="fipe_resultado wmfr" placeholder="R$ 0,00">
+                            </div>
+                            <div class="mensalidade_veiculo mfr">
                                 <label>Mensalidade</label>
-                                <input type= 'text' class="mensalidade_resultado wmfr" placeholder="R$ 0,00">
-                            </DIV>
-                            <DIV class="franquia_veiculo mfr">
+                                <input type="text" class="mensalidade_resultado wmfr" placeholder="R$ 0,00">
+                            </div>
+                            <div class="franquia_veiculo mfr">
                                 <label>Franquia</label>
-                                <input type= 'text' class="franquia_resultado wmfr" placeholder="R$ 0,00">
-                            </DIV>
+                                <input type="text" class="franquia_resultado wmfr" placeholder="R$ 0,00">
+                            </div>
                         </div>
                     </div>
                 </div>        
