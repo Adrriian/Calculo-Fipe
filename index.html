@@ -5,67 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
     <title>COTAÇÃO MANUAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 <body>
-    <main class="fundo">
-        <section class="dados">
+    <main>
+        <section>
             <div class="conteiner">
-                <div class="conteiner_conteudo">
-                    <div class="calculo_fipe">
-                        <div class="valores">
-                            <label>Nome</label>
-                            <input type="text" class="name" placeholder="Nome">
-                        </div>
-                        <div class="valores">
-                            <label>Telefone</label>
-                            <input type="text" class="phone" placeholder="Telefone">
-                        </div>
-                        <div class="valores">
-                            <label>Fipe</label>
-                            <input type="text" id="priceInput" step="0.01" class="fipe" placeholder="R$ 0,00">
-                        </div>
-                        <div class="coeficiente">
-                            <div class="vec_type">
-                                <div class="vec_text">
-                                    <h1>Veiculo</h1>
-                                </div>
-                                <div class="vec_container">
-                                    <div class="veiculo a" >
-                                        <input class="a" type="radio" name="vec" value="carro" id="car">
-                                        <label class="a" for="car">Carro</label>
-                                    </div>
-                                    <div class="veiculo a">      
-                                        <input class="a" type="radio" name="vec" value="moto" id="motorcycle">
-                                        <label class="a" for="motorcycle">Moto</label>
-                                    </div>
-                                </div>
+                <div class="title">
+                    <div class="title_area">
+                        <h1>Cotação Manual</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="conteiner">
+                <div class="dados_input">
+                    <div class="name_area">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" placeholder="Escreva o Nome">
+                    </div>
+                    <div class="phone_area">
+                        <label for="phone">Telefone:</label>
+                        <input type="text" id="phone" placeholder="Número de Telefone">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="conteiner">
+                <div class="dados_result">
+                    <div class="result_area">
+                       <div class="bc"><h1>Nome</h1></div>
+                       <div class="bc"><h1>Fipe Vec.</h1></div>
+                       <div class="bc"><h1>Cota</h1></div>
+                       <div class="bc"><h1>Mensalidade</h1></div>
+                       <div class="bc"><h1>Participação</h1></div>
+                    </div>
+                    <div class="result_infor">
+                        <div class="bc"><h1 class="name_result"></h1></div>
+                        <div class="bc"><h1 class="fipe_result"></h1></div>
+                        <div class="bc"><h1 class="cota_result"></h1></div>
+                        <div class="bc"><h1 class="men_result"></h1></div>
+                        <div class="bc"><h1 class="par_result"></h1></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="conteiner">
+                <div class="button_area">
+                    <button>Gerar Pdf</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="conteiner">
+                <div class="selection">
+                    <div class="selection_area">
+                        <button class="btn btncarro" data-acao="carro" >Carro</button>
+                        <button class="btn btnmoto" data-acao="moto 150 CL">Moto 150 CL</button>
+                        <button class="btn btnmotocl" data-acao="moto 150 CL+">Moto 150 CL+</button>
+                        <button class="btn" data-acao="fipe">Fipe Vec/Cota/Particição</button>
+                    </div>
+                    <div class="button_area ctc2">
+                        <button class="btn ctc" data-acao="cotacao">Gerar Cotação</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="conteiner">
+                <div class="modal">
+                    <div class="modal_area">
+                        <div class="modal_inf">
+                            <div class="valores">
+                                <label for="fop">Fipe</label>
+                                <input type="text" step="0.01" class="fipe" id="fop" placeholder="R$ 0,00">
                             </div>
-                            <div class="coeficiente_mensalidade">
-                                <div class="mensalidade_text">
-                                    <h1>Coeficiente mensalidade</h1>
-                                </div>
-                                <div class="mensalidade_container">
-                                    <div class="mensalidade a">
-                                        <input class="a" type="radio" name="men" value="0.008" id="80">
-                                        <label class="a" for="80">80</label>
+                            <div class="coeficiente">
+                                <div class="coeficiente_mensalidade">
+                                    <div class="mensalidade_text">
+                                        <h1>Coeficiente mensalidade</h1>
                                     </div>
-                                    <div class="mensalidade a">
-                                        <input class="a" type="radio" name="men" value="0.006" id="60">
-                                        <label class="a" for="60">60</label>
-                                    </div>
-                                    <div class="mensalidade a">
-                                        <input class="a" type="radio" name="men" value="0.005" id="50">
-                                        <label class="a" for="50">50</label>
-                                    </div>
-                                    <div class="mensalidade a">
-                                        <input class="a"  type="radio" name="men" value="0.005" id="40">
-                                        <label class="a" for="40">40</label>
-                                    </div>
-                                    <div class="mensalidade a">
-                                        <input class="a" type="radio" name="men" value="0.003" id="30">
-                                        <label class="a" for="30">30</label>
+                                    <div class="mensalidade_container">
+                                        <div class="mensalidade a">
+                                            <input class="a" type="radio" name="men" value="0.008" id="80">
+                                            <label class="a" for="80">80</label>
+                                        </div>
+                                        <div class="mensalidade a">
+                                            <input class="a" type="radio" name="men" value="0.006" id="60">
+                                            <label class="a" for="60">60</label>
+                                        </div>
+                                        <div class="mensalidade a">
+                                            <input class="a" type="radio" name="men" value="0.005" id="50">
+                                            <label class="a" for="50">50</label>
+                                        </div>
+                                        <div class="mensalidade a">
+                                            <input class="a"  type="radio" name="men" value="0.005" id="40">
+                                            <label class="a" for="40">40</label>
+                                        </div>
+                                        <div class="mensalidade a">
+                                            <input class="a" type="radio" name="men" value="0.003" id="30">
+                                            <label class="a" for="30">30</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -89,188 +136,10 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn">Resultado</button>
+                        <div class="button_area ctc2">
+                            <button class="btn ctc" data-acao="salvar">Salvar</button>
+                        </div>
                     </div>
-                </div>        
-            </div>
-        </section>
-        <section class="cotacao">
-            <div class="conteiner">
-                <div class="conteiner_conteudo">
-                    <div class="dados_veiculo">
-                        <div class="dados_veiculo_text">
-                            <h1>Dados veiculo</h1>
-                        </div>
-                        <div class="dados_veiculo_resultado">
-                            <div class="fipe_veiculo mfr">
-                                <label>Interessado</label>
-                                <input type="text" class="name_resultado wmfr" readonly>
-                            </div>
-                            <div class="fipe_veiculo mfr">
-                                <label>Telefone</label>
-                                <input type="text" class="phone_resultado wmfr"  readonly>
-                            </div>
-                            <div class="fipe_veiculo mfr">
-                                <label>Fipe</label>
-                                <input type="text" class="fipe_resultado wmfr"  readonly>
-                            </div>
-                            <div class="mensalidade_veiculo mfr">
-                                <label>Mensalidade</label>
-                                <input type="text" class="mensalidade_resultado wmfr"  readonly>
-                            </div>
-                            <div class="franquia_veiculo mfr">
-                                <label>Participação</label>
-                                <input type="text" class="franquia_resultado wmfr"  readonly>
-                            </div>
-                        </div>
-                    </div>       
-                </div>
-            </div>
-        </section>
-        <section class="benefits">
-            <div class="conteiner">
-                <div class="conteiner_content">
-                    <div class="beneficios">
-                        <div class="benefits_car">
-                            <div class="benefits_title">
-                                <h1 class="title">Beneficios</h1>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img class="spc" src="assets/img/S_C Serasa.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title spc_title">Sem consulta ao SPC/Serasa</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img class="sp" src="assets/img/S_P Condutor.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Sem perfil de condutor</h1>
-                                    <h1 class="obs">Qualquer pessoa habilitada pode dirigir</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/indenização.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Indenização até 100% Fipe</h1>
-                                    <h1 class="obs">Roubo, Furto, Perda Total (PT), Incêndio em caso de colisão, Eventos Naturais</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/colisão.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Recuperação Total de danos decorrentes de colisões</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/colisão.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">R$ 1 milhão para Danos Materiais a terceiros</h1>
-                                    <h1 class="obs">Veículos automotores</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/DC.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">R$ 250 mil para Danos Corporais a Terceiros</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/DM.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">R$ 250 mil para Danos Morais a Terceiros</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/Invalides.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">APP morte ou invalidez até R$ 5 mil <br>para cada ocupante do veículo</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/AP.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Auxílio Funeral motorista até R$ 5 mil</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/starms.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Star + Saúde</h1>
-                                    <h1 class="obs">Telemedicina | Consultas médicas online ilimitadas (Clínico Geral)</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/guincho.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Guincho com km ilimitada em caso de colisão</h1>
-                                    <h1 class="obs">Veículo sem condições de trafegar</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/guincho.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Guincho 1.200 km</h1>
-                                    <h1 class="obs">3 x 400 km / ano, 200 km ida e 200 km volta</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/parabrisa.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Proteção de 60% para Vidros</h1>
-                                    <h1 class="obs"> Para-brisa, laterais e traseiro</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/uber.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Auxílio Transporte Alternativo em caso de colisão 3 x R$ 50 / ano</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/chaveiro.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Auxílio Chaveiro 1 x R$ 100 / ano</h1>
-                                </div>
-                            </div>
-                            <div class="benfits_order">
-                                <div class="benefits_img">
-                                    <img src="assets/img/plantão.png">
-                                </div>
-                                <div class="benefits_text">
-                                    <h1 class="title">Plantão Assistência 24 horas em todo Território Nacional</h1>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
