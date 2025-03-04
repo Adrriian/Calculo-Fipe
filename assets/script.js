@@ -26,6 +26,7 @@ let btn = document.querySelectorAll(".btn")
 btn.forEach(btns =>{
     btns.addEventListener("click", () => {
         let acao = btns.getAttribute("data-acao")
+        let modal = document.querySelector(".modal")
         let minmencarbike = 91.50
         let minmenbike = 86.50
 

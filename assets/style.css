@@ -52,6 +52,7 @@ input::placeholder{
     right: 0;
     left: 0;
     position: fixed;
+    display:none;
 }
 .modal_area{
     width: 80%;
@@ -73,6 +74,7 @@ input::placeholder{
     grid-template-columns: repeat(3,1fr);
     padding: 10px;
 }
+
 /*dados especificos*/
 
 .title{
@@ -138,7 +140,7 @@ input::placeholder{
 }
 .selection_area{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(4,1fr);
 }
 .ctc{
     margin-top: 20px;
@@ -147,6 +149,9 @@ input::placeholder{
 }
 .ctc2{
     margin-top: 0;
+}
+.btnfp{
+    width: 300px;
 }
 .coeficiente_mensalidade,
 .coeficiente_franquia,
@@ -165,6 +170,7 @@ input::placeholder{
 }
 .mensalidade,
 .franquia,
-.valores{
+.valores,
+.modalbtn{
     text-align: center;
 }
