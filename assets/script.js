@@ -42,10 +42,10 @@ btn.forEach(btns =>{
                 selecionarBotao()
             break
             case "fipe":
-                alert("clicou na fipe")
+                modal.style.display = "flex"
             break
             case "salvar":
-
+                 modal.style.display = "none"
             break
             case "cotacao":
 
