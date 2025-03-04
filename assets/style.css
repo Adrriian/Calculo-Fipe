@@ -31,13 +31,16 @@ button{
 }
 
 .cotacao{
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-top: 30px;
     width: 50%;
     border: 1px solid #ff5900;
 }
-.benefits{
+.benefits,
+.benefits_car,
+.beneficios_truck,
+.benefits_motocycle{
     border: 1px solid #ff5900;
     display: none;
     margin-top: 20px;
@@ -75,10 +78,13 @@ button{
     margin:30px;
 }
 .valores input{
+    text-transform: uppercase;
     padding: 10px;
     width: 115px;
     text-align: center;
+    font-weight: bold;
 }
+
 .coeficiente{
     display: grid;
     justify-content: center;
@@ -159,8 +165,8 @@ button{
 .benefits_motocycle,
 .beneficios_truck{
     margin: 10px 10px 10px 10px ;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 15px;
@@ -189,6 +195,9 @@ button{
 .obs{
     font-size: 15px;
 }
+.benefits_img img{
+    width: 110px;
+}
 .mfr{
     display: flex;
     align-items: flex-start;
@@ -204,9 +213,11 @@ button{
 }
 .wmfr{
     display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
     padding: 5px;
     width: 130px;
-    text-align: center;
+    font-size: 22px;
     border: none;
 }
 @media print {

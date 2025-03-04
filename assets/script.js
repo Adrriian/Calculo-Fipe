@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função chamada ao clicar no botão
     function clicou() {
         let fipe = getRawValue(); // Obtém o valor numérico do input
+        let name = document.querySelector(".name")
+        let phone = document.querySelector(".phone")
         let ctc = document.querySelector(".cotacao")
         let dados = document.querySelector(".dados")
         let benefits = document.querySelector(".benefits")
@@ -86,26 +88,40 @@ document.addEventListener("DOMContentLoaded", function () {
         // Definir valores mínimos de mensalidade
         const minMensalidadeCarro = 91.50;
         const minMensalidadeMoto = 86.50;
+        const minfra = 1500;
+
+        
+        
 
         // Cálculo da mensalidade considerando o mínimo
         let calculomen = fipe * multiplicadormen;
         if (tipoVeiculo === "carro" && calculomen < minMensalidadeCarro) {
+            const benefits_car = document.querySelector(".benefits_car");
             calculomen = minMensalidadeCarro;
+            benefits.style.display = "grid";
+            benefits_car.style.display = "flex";
         } else if (tipoVeiculo === "moto" && calculomen < minMensalidadeMoto) {
+            const benefits_motocycle = document.querySelector(".benefits_motocycle");
             calculomen = minMensalidadeMoto;
+            benefits.style.display = "grid";
+            benefits_motocycle.style.display = "flex";
         }
         calculomen += 20; // Soma os R$ 20 fixos
 
         // Cálculo da franquia
-        const calculofra = fipe * multiplicadorfra;
-
+        let calculofra = fipe * multiplicadorfra;
+        if(calculofra < minfra){
+            calculofra = minfra;
+        }
+        
         // Exibir resultados formatados
         document.querySelector(".fipe_resultado").value = formatCurrency(fipe);
         document.querySelector(".mensalidade_resultado").value = formatCurrency(calculomen);
-        document.querySelector(".franquia_resultado").value = formatCurrency(calculofra);
+        document.querySelector(".franquia_resultado").value = calculofra;
+        document.querySelector(".name_resultado").value = name.value;
+        document.querySelector(".phone_resultado").value = phone.value;
         
         ctc.style.display = "flex"
-        benefits.style.display = "grid"
         dados.style.display = "none"
     }
 
