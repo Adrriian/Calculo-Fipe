@@ -40,10 +40,10 @@ input::placeholder{
     background-color: #fff;
     color: #222e5a;
     border: 1px solid #ff5900;
-    width: 80%;
-    height: 80%;
 }
-.modal{
+.modalcar,
+.modalcl,
+.modalclplus{
     width: 100%;
     margin: auto;
     background-color: rgba(0,0,0,0.7);
@@ -113,8 +113,11 @@ input::placeholder{
 .result_area,
 .result_infor{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     
+}
+.name_result{
+    text-transform: uppercase;
 }
 .bc{
     padding: 10px;
